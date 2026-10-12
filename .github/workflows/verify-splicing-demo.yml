@@ -1,0 +1,27 @@
+name: Verify synthetic splicing demo
+
+on:
+  push:
+    paths:
+      - "splicing-pathogenicity-imat-demo/**"
+      - ".github/workflows/verify-splicing-demo.yml"
+  pull_request:
+    paths:
+      - "splicing-pathogenicity-imat-demo/**"
+      - ".github/workflows/verify-splicing-demo.yml"
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: splicing-pathogenicity-imat-demo
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Check syntax
+        run: python -m compileall -q preview_demo.py tests
+      - name: Verify deterministic preview, links and zeroing rules
+        run: python -m unittest discover -s tests -v

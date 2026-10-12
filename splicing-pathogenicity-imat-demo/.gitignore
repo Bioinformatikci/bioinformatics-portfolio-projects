@@ -1,0 +1,8 @@
+/data/
+/results/
+__pycache__/
+*.pyc
+.venv/
+.cache/
+.python/
+model/*.xml

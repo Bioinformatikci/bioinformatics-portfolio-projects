@@ -14,6 +14,7 @@ The projects focus on sequence analysis, transcriptomics, alternative splicing w
 | `bioinformatics-python-scripts/` | Small reproducible bioinformatics utilities and analysis scripts | Python, pandas, SciPy, matplotlib |
 | `rna-seq-alternative-splicing-rmats/` | RNA-seq alternative splicing workflow notes | STAR, rMATS, rmats2sashimiplot, shell |
 | `interactive-shiny-dashboards/` | Interactive data exploration applications | R, Shiny, ggplot2, DT |
+| [`splicing-pathogenicity-imat-demo/`](splicing-pathogenicity-imat-demo/) | Synthetic splicing and pathogenicity workflow with a ready-to-view HTML report and reproducible toy figures | Python, COBAMP, TROPPO, Human-GEM, Gurobi |
 
 ## Highlighted Work
 
@@ -23,6 +24,9 @@ The projects focus on sequence analysis, transcriptomics, alternative splicing w
 - Python scripts for FASTA parsing, motif search, simple genome assembly logic, GBM expression summaries, volcano plotting, and variant population summaries.
 - R/Shiny applications for interactive Palmer Penguins and obesity transcriptome data exploration.
 - RNA-seq alternative splicing workflow notes using STAR, rMATS, and rmats2sashimiplot.
+- [Splicing and pathogenicity iMAT demo](splicing-pathogenicity-imat-demo/): view the [generated toy report](splicing-pathogenicity-imat-demo/showcase/index.html), [plots](splicing-pathogenicity-imat-demo/showcase/figures/active_reactions.svg), and [input tables](splicing-pathogenicity-imat-demo/showcase/data/raw/), or regenerate the preview with one standard-library Python command. The model-based pipeline is documented separately and requires its pinned dependencies and a Gurobi license.
+
+![Synthetic reaction activity preview, clearly separated from model-based iMAT results](splicing-pathogenicity-imat-demo/showcase/figures/active_reactions.svg)
 
 ## Topics Covered
 
@@ -37,7 +41,7 @@ The projects focus on sequence analysis, transcriptomics, alternative splicing w
 
 ## Notes On Authorship
 
-The analysis code and project files in this repository were authored by Burak Keskin. Codex was used only to help organize the repository structure and draft documentation such as README files.
+The repository contains Burak Keskin's portfolio work. The synthetic splicing and pathogenicity demonstration includes code, toy data, and presentation materials developed with Codex assistance. Its README separates the lightweight preview from the model-based research workflow and states what has been verified.
 
 ## Repository Status
 
