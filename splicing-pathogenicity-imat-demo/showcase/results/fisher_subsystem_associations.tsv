@@ -1,0 +1,399 @@
+condition	subsystem	associated_fisher_reactions_raw_p_lt_0_05	reporter_corrected_p_lt_0_05
+expression_only	Transport reactions	2051	True
+expression_only	Exchange/demand reactions	546	False
+expression_only	Drug metabolism	286	True
+expression_only	Fatty acid oxidation	211	False
+expression_only	Bile acid biosynthesis	130	False
+expression_only	Sphingolipid metabolism	80	False
+expression_only	Phenylalanine, tyrosine and tryptophan biosynthesis	68	True
+expression_only	Purine metabolism	59	False
+expression_only	Glycerophospholipid metabolism	51	False
+expression_only	Pyrimidine metabolism	49	False
+expression_only	Nucleotide metabolism	45	False
+expression_only	Folate metabolism	43	False
+expression_only	Glycine, serine and threonine metabolism	43	False
+expression_only	Steroid metabolism	41	False
+expression_only	Cholesterol metabolism	40	False
+expression_only	Inositol phosphate metabolism	40	True
+expression_only	Carnitine shuttle (mitochondrial)	39	False
+expression_only	Arginine and proline metabolism	38	False
+expression_only	Tyrosine metabolism	38	False
+expression_only	N-glycan metabolism	37	False
+expression_only	Blood group biosynthesis	35	True
+expression_only	Glycosphingolipid biosynthesis-lacto and neolacto series	35	False
+expression_only	Xenobiotics metabolism	35	False
+expression_only	Valine, leucine, and isoleucine metabolism	34	False
+expression_only	Fatty acid biosynthesis (unsaturated)	32	False
+expression_only	Omega-3 fatty acid metabolism	31	False
+expression_only	Heparan sulfate degradation	30	True
+expression_only	Miscellaneous	30	False
+expression_only	Fatty acid biosynthesis (even-chain)	29	False
+expression_only	Fatty acid biosynthesis (odd-chain)	29	True
+expression_only	Starch and sucrose metabolism	29	False
+expression_only	Alanine, aspartate and glutamate metabolism	28	False
+expression_only	Arachidonic acid metabolism	28	False
+expression_only	Cysteine and methionine metabolism	28	False
+expression_only	Chondroitin sulfate degradation	26	True
+expression_only	Bile acid recycling	25	False
+expression_only	Fatty acid biosynthesis	24	False
+expression_only	Glycosphingolipid biosynthesis-ganglio series	24	False
+expression_only	Carnitine shuttle (endoplasmic reticular)	23	False
+expression_only	Nicotinate and nicotinamide metabolism	23	False
+expression_only	Tricarboxylic acid cycle and glyoxylate/dicarboxylate metabolism	23	False
+expression_only	Glycosylphosphatidylinositol (GPI)-anchor biosynthesis	21	False
+expression_only	Omega-6 fatty acid metabolism	21	False
+expression_only	Beta oxidation of odd-chain fatty acids (mitochondrial)	20	False
+expression_only	Cholesterol biosynthesis 1 (Bloch pathway)	20	False
+expression_only	Chondroitin / heparan sulfate biosynthesis	20	True
+expression_only	Glycolysis / Gluconeogenesis	20	False
+expression_only	Retinol metabolism	20	False
+expression_only	Beta oxidation of di-unsaturated fatty acids (n-6) (mitochondrial)	19	False
+expression_only	Formation and hydrolysis of cholesterol esters	19	False
+expression_only	Pentose phosphate pathway	19	False
+expression_only	Androgen metabolism	18	False
+expression_only	Beta oxidation of even-chain fatty acids (mitochondrial)	18	False
+expression_only	Pyruvate metabolism	18	False
+expression_only	Amino sugar and nucleotide sugar metabolism	17	False
+expression_only	Beta oxidation of unsaturated fatty acids (n-7) (mitochondrial)	17	False
+expression_only	Beta oxidation of unsaturated fatty acids (n-9) (mitochondrial)	17	False
+expression_only	Cholesterol biosynthesis 3 (Kandustch-Russell pathway)	16	True
+expression_only	Fatty acid elongation (even-chain)	16	False
+expression_only	Porphyrin metabolism	16	False
+expression_only	Pantothenate and CoA biosynthesis	15	False
+expression_only	Prostaglandin biosynthesis	14	False
+expression_only	Glycosphingolipid metabolism	13	False
+expression_only	Leukotriene metabolism	13	False
+expression_only	Biopterin metabolism	12	False
+expression_only	Biotin metabolism	12	True
+expression_only	Carnitine shuttle (cytosolic)	12	False
+expression_only	Fatty acid elongation (odd-chain)	12	False
+expression_only	Beta-alanine metabolism	11	False
+expression_only	Histidine metabolism	11	False
+expression_only	Isolated	11	True
+expression_only	Propanoate metabolism	11	False
+expression_only	Fatty acid desaturation (even-chain)	10	False
+expression_only	Galactose metabolism	10	False
+expression_only	Lysine metabolism	10	False
+expression_only	Terpenoid backbone biosynthesis	10	False
+expression_only	Eicosanoid metabolism	9	False
+expression_only	Ubiquinone synthesis	9	False
+expression_only	ROS detoxification	8	False
+expression_only	Serotonin and melatonin biosynthesis	8	False
+expression_only	Ascorbate and aldarate metabolism	7	False
+expression_only	Fructose and mannose metabolism	7	True
+expression_only	Glycosphingolipid biosynthesis-globo series	7	False
+expression_only	Metabolism of other amino acids	7	True
+expression_only	O-glycan metabolism	7	False
+expression_only	Pentose and glucuronate interconversions	7	False
+expression_only	Pool reactions	7	False
+expression_only	Protein assembly	7	True
+expression_only	Tryptophan metabolism	7	False
+expression_only	Beta oxidation of di-unsaturated fatty acids (n-6) (peroxisomal)	6	False
+expression_only	Glucocorticoid biosynthesis	6	False
+expression_only	Sulfur metabolism	6	False
+expression_only	Keratan sulfate degradation	5	False
+expression_only	Oxidative phosphorylation	5	False
+expression_only	Protein degradation	5	True
+expression_only	Vitamin B6 metabolism	5	False
+expression_only	Beta oxidation of even-chain fatty acids (peroxisomal)	4	False
+expression_only	Butanoate metabolism	4	False
+expression_only	C5-branched dibasic acid metabolism	4	True
+expression_only	Glutathione metabolism	4	False
+expression_only	Heme synthesis	4	False
+expression_only	Phosphatidylinositol phosphate metabolism	4	False
+expression_only	Vitamin E metabolism	4	False
+expression_only	Acylglycerides metabolism	3	False
+expression_only	CoA synthesis	3	False
+expression_only	Heme degradation	3	False
+expression_only	Peptide metabolism	3	False
+expression_only	Protein modification	3	False
+expression_only	Thiamine metabolism	3	False
+expression_only	Beta oxidation of phytanic acid (peroxisomal)	2	False
+expression_only	Beta oxidation of unsaturated fatty acids (n-9) (peroxisomal)	2	False
+expression_only	Carnitine shuttle (peroxisomal)	2	False
+expression_only	Cholesterol biosynthesis 2	2	False
+expression_only	Dietary fiber binding	2	False
+expression_only	Estrogen metabolism	2	False
+expression_only	Ether lipid metabolism	2	False
+expression_only	Fatty acid desaturation (odd-chain)	2	False
+expression_only	Glycerolipid metabolism	2	False
+expression_only	Urea cycle	2	False
+expression_only	Vitamin A metabolism	2	False
+expression_only	Vitamin D metabolism	2	False
+expression_only	Artificial reactions	1	False
+expression_only	Beta oxidation of odd-chain fatty acids (peroxisomal)	1	False
+expression_only	CoA catabolism	1	False
+expression_only	Fatty acid activation (cytosolic)	1	False
+expression_only	Fatty acid activation (endoplasmic reticular)	1	False
+expression_only	Linoleate metabolism	1	False
+expression_only	Lipoic acid metabolism	1	False
+expression_only	Phenylalanine metabolism	1	False
+expression_only	Riboflavin metabolism	1	False
+expression_only	Vitamin B2 metabolism	1	False
+expression_only	Vitamin C metabolism	1	False
+splicing_informed	Transport reactions	2047	True
+splicing_informed	Exchange/demand reactions	551	False
+splicing_informed	Drug metabolism	287	True
+splicing_informed	Fatty acid oxidation	208	False
+splicing_informed	Bile acid biosynthesis	135	False
+splicing_informed	Sphingolipid metabolism	83	False
+splicing_informed	Phenylalanine, tyrosine and tryptophan biosynthesis	69	True
+splicing_informed	Purine metabolism	61	False
+splicing_informed	Glycerophospholipid metabolism	50	False
+splicing_informed	Nucleotide metabolism	48	False
+splicing_informed	Pyrimidine metabolism	47	False
+splicing_informed	Folate metabolism	43	False
+splicing_informed	Glycine, serine and threonine metabolism	41	False
+splicing_informed	Inositol phosphate metabolism	40	True
+splicing_informed	Steroid metabolism	40	True
+splicing_informed	Arginine and proline metabolism	39	False
+splicing_informed	Tyrosine metabolism	39	False
+splicing_informed	Carnitine shuttle (mitochondrial)	38	False
+splicing_informed	N-glycan metabolism	37	False
+splicing_informed	Chondroitin / heparan sulfate biosynthesis	36	False
+splicing_informed	Blood group biosynthesis	35	True
+splicing_informed	Cholesterol metabolism	35	False
+splicing_informed	Glycosphingolipid biosynthesis-lacto and neolacto series	35	False
+splicing_informed	Valine, leucine, and isoleucine metabolism	35	False
+splicing_informed	Xenobiotics metabolism	35	False
+splicing_informed	Fatty acid biosynthesis (unsaturated)	32	False
+splicing_informed	Miscellaneous	31	False
+splicing_informed	Omega-3 fatty acid metabolism	31	False
+splicing_informed	Fatty acid biosynthesis (even-chain)	30	False
+splicing_informed	Heparan sulfate degradation	30	True
+splicing_informed	Fatty acid biosynthesis (odd-chain)	29	True
+splicing_informed	Cysteine and methionine metabolism	28	False
+splicing_informed	Starch and sucrose metabolism	28	False
+splicing_informed	Alanine, aspartate and glutamate metabolism	27	False
+splicing_informed	Arachidonic acid metabolism	27	False
+splicing_informed	Chondroitin sulfate degradation	26	False
+splicing_informed	Bile acid recycling	25	False
+splicing_informed	Fatty acid biosynthesis	24	False
+splicing_informed	Glycosphingolipid biosynthesis-ganglio series	23	False
+splicing_informed	Nicotinate and nicotinamide metabolism	23	False
+splicing_informed	Omega-6 fatty acid metabolism	23	False
+splicing_informed	Glycosylphosphatidylinositol (GPI)-anchor biosynthesis	22	False
+splicing_informed	Tricarboxylic acid cycle and glyoxylate/dicarboxylate metabolism	22	False
+splicing_informed	Carnitine shuttle (endoplasmic reticular)	21	False
+splicing_informed	Beta oxidation of odd-chain fatty acids (mitochondrial)	20	False
+splicing_informed	Glycolysis / Gluconeogenesis	20	False
+splicing_informed	Retinol metabolism	20	False
+splicing_informed	Beta oxidation of di-unsaturated fatty acids (n-6) (mitochondrial)	19	False
+splicing_informed	Formation and hydrolysis of cholesterol esters	19	False
+splicing_informed	Pentose phosphate pathway	19	False
+splicing_informed	Androgen metabolism	18	False
+splicing_informed	Beta oxidation of even-chain fatty acids (mitochondrial)	18	False
+splicing_informed	Cholesterol biosynthesis 1 (Bloch pathway)	18	True
+splicing_informed	Leukotriene metabolism	18	False
+splicing_informed	Pyruvate metabolism	18	False
+splicing_informed	Beta oxidation of unsaturated fatty acids (n-7) (mitochondrial)	17	False
+splicing_informed	Cholesterol biosynthesis 3 (Kandustch-Russell pathway)	16	True
+splicing_informed	Fatty acid elongation (even-chain)	16	False
+splicing_informed	Porphyrin metabolism	16	False
+splicing_informed	Pantothenate and CoA biosynthesis	15	False
+splicing_informed	Prostaglandin biosynthesis	14	False
+splicing_informed	Amino sugar and nucleotide sugar metabolism	13	False
+splicing_informed	Beta oxidation of unsaturated fatty acids (n-9) (mitochondrial)	13	False
+splicing_informed	Carnitine shuttle (cytosolic)	13	False
+splicing_informed	Glycosphingolipid metabolism	13	False
+splicing_informed	Biopterin metabolism	12	False
+splicing_informed	Biotin metabolism	12	True
+splicing_informed	Fatty acid elongation (odd-chain)	12	False
+splicing_informed	Beta oxidation of poly-unsaturated fatty acids (mitochondrial)	11	False
+splicing_informed	Beta-alanine metabolism	11	False
+splicing_informed	Galactose metabolism	11	False
+splicing_informed	Histidine metabolism	11	False
+splicing_informed	Isolated	11	True
+splicing_informed	Propanoate metabolism	11	False
+splicing_informed	Fatty acid desaturation (even-chain)	10	True
+splicing_informed	Lysine metabolism	10	False
+splicing_informed	Terpenoid backbone biosynthesis	10	False
+splicing_informed	Fructose and mannose metabolism	9	False
+splicing_informed	Pool reactions	9	False
+splicing_informed	Ubiquinone synthesis	9	False
+splicing_informed	Eicosanoid metabolism	8	False
+splicing_informed	ROS detoxification	8	False
+splicing_informed	Serotonin and melatonin biosynthesis	8	False
+splicing_informed	Ascorbate and aldarate metabolism	7	False
+splicing_informed	Glucocorticoid biosynthesis	7	False
+splicing_informed	Glycosphingolipid biosynthesis-globo series	7	False
+splicing_informed	Metabolism of other amino acids	7	True
+splicing_informed	O-glycan metabolism	7	False
+splicing_informed	Pentose and glucuronate interconversions	7	False
+splicing_informed	Protein assembly	7	True
+splicing_informed	Beta oxidation of di-unsaturated fatty acids (n-6) (peroxisomal)	6	False
+splicing_informed	Oxidative phosphorylation	6	False
+splicing_informed	Sulfur metabolism	6	False
+splicing_informed	Tryptophan metabolism	6	False
+splicing_informed	Keratan sulfate degradation	5	False
+splicing_informed	Protein degradation	5	True
+splicing_informed	Vitamin B6 metabolism	5	False
+splicing_informed	Beta oxidation of even-chain fatty acids (peroxisomal)	4	False
+splicing_informed	Beta oxidation of phytanic acid (peroxisomal)	4	False
+splicing_informed	Butanoate metabolism	4	False
+splicing_informed	C5-branched dibasic acid metabolism	4	True
+splicing_informed	Carnitine shuttle (peroxisomal)	4	False
+splicing_informed	Glutathione metabolism	4	False
+splicing_informed	Phosphatidylinositol phosphate metabolism	4	False
+splicing_informed	Vitamin E metabolism	4	False
+splicing_informed	Acylglycerides metabolism	3	False
+splicing_informed	Dietary fiber binding	3	False
+splicing_informed	Ether lipid metabolism	3	False
+splicing_informed	Glycerolipid metabolism	3	False
+splicing_informed	Heme synthesis	3	False
+splicing_informed	Peptide metabolism	3	False
+splicing_informed	Protein modification	3	False
+splicing_informed	Thiamine metabolism	3	False
+splicing_informed	Beta oxidation of unsaturated fatty acids (n-9) (peroxisomal)	2	False
+splicing_informed	Cholesterol biosynthesis 2	2	False
+splicing_informed	Estrogen metabolism	2	False
+splicing_informed	Fatty acid desaturation (odd-chain)	2	False
+splicing_informed	Heme degradation	2	False
+splicing_informed	Urea cycle	2	False
+splicing_informed	Vitamin A metabolism	2	False
+splicing_informed	Vitamin D metabolism	2	False
+splicing_informed	Artificial reactions	1	False
+splicing_informed	Beta oxidation of odd-chain fatty acids (peroxisomal)	1	False
+splicing_informed	CoA catabolism	1	False
+splicing_informed	CoA synthesis	1	False
+splicing_informed	Fatty acid activation (cytosolic)	1	False
+splicing_informed	Fatty acid activation (endoplasmic reticular)	1	False
+splicing_informed	Linoleate metabolism	1	False
+splicing_informed	Lipoic acid metabolism	1	False
+splicing_informed	Phenylalanine metabolism	1	False
+splicing_informed	Riboflavin metabolism	1	False
+splicing_informed	Vitamin B2 metabolism	1	False
+splicing_pathogenicity_informed	Transport reactions	2046	True
+splicing_pathogenicity_informed	Exchange/demand reactions	552	False
+splicing_pathogenicity_informed	Drug metabolism	288	True
+splicing_pathogenicity_informed	Fatty acid oxidation	218	False
+splicing_pathogenicity_informed	Bile acid biosynthesis	132	False
+splicing_pathogenicity_informed	Sphingolipid metabolism	85	False
+splicing_pathogenicity_informed	Phenylalanine, tyrosine and tryptophan biosynthesis	68	True
+splicing_pathogenicity_informed	Purine metabolism	62	False
+splicing_pathogenicity_informed	Glycerophospholipid metabolism	51	False
+splicing_pathogenicity_informed	Pyrimidine metabolism	48	False
+splicing_pathogenicity_informed	Nucleotide metabolism	46	False
+splicing_pathogenicity_informed	Retinol metabolism	45	False
+splicing_pathogenicity_informed	Folate metabolism	43	False
+splicing_pathogenicity_informed	N-glycan metabolism	42	False
+splicing_pathogenicity_informed	Chondroitin / heparan sulfate biosynthesis	41	False
+splicing_pathogenicity_informed	Carnitine shuttle (mitochondrial)	40	False
+splicing_pathogenicity_informed	Steroid metabolism	40	True
+splicing_pathogenicity_informed	Glycine, serine and threonine metabolism	39	False
+splicing_pathogenicity_informed	Tyrosine metabolism	39	False
+splicing_pathogenicity_informed	Arginine and proline metabolism	38	False
+splicing_pathogenicity_informed	Inositol phosphate metabolism	38	True
+splicing_pathogenicity_informed	Cholesterol metabolism	37	False
+splicing_pathogenicity_informed	Blood group biosynthesis	35	True
+splicing_pathogenicity_informed	Glycosphingolipid biosynthesis-lacto and neolacto series	35	False
+splicing_pathogenicity_informed	Xenobiotics metabolism	35	False
+splicing_pathogenicity_informed	Starch and sucrose metabolism	33	False
+splicing_pathogenicity_informed	Fatty acid biosynthesis (unsaturated)	32	False
+splicing_pathogenicity_informed	Valine, leucine, and isoleucine metabolism	32	False
+splicing_pathogenicity_informed	Miscellaneous	31	False
+splicing_pathogenicity_informed	Omega-3 fatty acid metabolism	31	False
+splicing_pathogenicity_informed	Heparan sulfate degradation	30	True
+splicing_pathogenicity_informed	Fatty acid biosynthesis (even-chain)	29	False
+splicing_pathogenicity_informed	Fatty acid biosynthesis (odd-chain)	29	True
+splicing_pathogenicity_informed	Cysteine and methionine metabolism	27	False
+splicing_pathogenicity_informed	Arachidonic acid metabolism	26	False
+splicing_pathogenicity_informed	Chondroitin sulfate degradation	26	True
+splicing_pathogenicity_informed	Fatty acid biosynthesis	25	False
+splicing_pathogenicity_informed	Alanine, aspartate and glutamate metabolism	24	False
+splicing_pathogenicity_informed	Bile acid recycling	23	False
+splicing_pathogenicity_informed	Glycosphingolipid biosynthesis-ganglio series	22	False
+splicing_pathogenicity_informed	Glycosylphosphatidylinositol (GPI)-anchor biosynthesis	22	False
+splicing_pathogenicity_informed	Nicotinate and nicotinamide metabolism	22	False
+splicing_pathogenicity_informed	Omega-6 fatty acid metabolism	22	False
+splicing_pathogenicity_informed	Carnitine shuttle (endoplasmic reticular)	21	False
+splicing_pathogenicity_informed	Beta oxidation of odd-chain fatty acids (mitochondrial)	20	False
+splicing_pathogenicity_informed	Glycolysis / Gluconeogenesis	20	False
+splicing_pathogenicity_informed	Pentose phosphate pathway	20	False
+splicing_pathogenicity_informed	Tricarboxylic acid cycle and glyoxylate/dicarboxylate metabolism	20	False
+splicing_pathogenicity_informed	Beta oxidation of di-unsaturated fatty acids (n-6) (mitochondrial)	19	False
+splicing_pathogenicity_informed	Formation and hydrolysis of cholesterol esters	19	False
+splicing_pathogenicity_informed	Androgen metabolism	18	False
+splicing_pathogenicity_informed	Beta oxidation of even-chain fatty acids (mitochondrial)	18	False
+splicing_pathogenicity_informed	Cholesterol biosynthesis 1 (Bloch pathway)	18	True
+splicing_pathogenicity_informed	Pyruvate metabolism	18	False
+splicing_pathogenicity_informed	Amino sugar and nucleotide sugar metabolism	17	False
+splicing_pathogenicity_informed	Beta oxidation of unsaturated fatty acids (n-7) (mitochondrial)	17	False
+splicing_pathogenicity_informed	Cholesterol biosynthesis 3 (Kandustch-Russell pathway)	16	True
+splicing_pathogenicity_informed	Fatty acid elongation (even-chain)	16	False
+splicing_pathogenicity_informed	Vitamin D metabolism	16	False
+splicing_pathogenicity_informed	Porphyrin metabolism	15	False
+splicing_pathogenicity_informed	Biotin metabolism	14	True
+splicing_pathogenicity_informed	Pantothenate and CoA biosynthesis	14	False
+splicing_pathogenicity_informed	Prostaglandin biosynthesis	14	False
+splicing_pathogenicity_informed	Beta oxidation of unsaturated fatty acids (n-9) (mitochondrial)	13	False
+splicing_pathogenicity_informed	Carnitine shuttle (cytosolic)	13	False
+splicing_pathogenicity_informed	Glycosphingolipid metabolism	13	False
+splicing_pathogenicity_informed	Biopterin metabolism	12	False
+splicing_pathogenicity_informed	Fatty acid elongation (odd-chain)	12	False
+splicing_pathogenicity_informed	Leukotriene metabolism	12	False
+splicing_pathogenicity_informed	Beta-alanine metabolism	11	False
+splicing_pathogenicity_informed	Galactose metabolism	11	False
+splicing_pathogenicity_informed	Histidine metabolism	11	False
+splicing_pathogenicity_informed	Isolated	11	True
+splicing_pathogenicity_informed	Propanoate metabolism	11	False
+splicing_pathogenicity_informed	Fatty acid desaturation (even-chain)	10	True
+splicing_pathogenicity_informed	Terpenoid backbone biosynthesis	10	False
+splicing_pathogenicity_informed	Eicosanoid metabolism	9	False
+splicing_pathogenicity_informed	Fructose and mannose metabolism	9	False
+splicing_pathogenicity_informed	Lysine metabolism	9	False
+splicing_pathogenicity_informed	Pentose and glucuronate interconversions	8	False
+splicing_pathogenicity_informed	ROS detoxification	8	False
+splicing_pathogenicity_informed	Serotonin and melatonin biosynthesis	8	False
+splicing_pathogenicity_informed	Ubiquinone synthesis	8	False
+splicing_pathogenicity_informed	Ascorbate and aldarate metabolism	7	False
+splicing_pathogenicity_informed	Glycosphingolipid biosynthesis-globo series	7	False
+splicing_pathogenicity_informed	Metabolism of other amino acids	7	True
+splicing_pathogenicity_informed	O-glycan metabolism	7	False
+splicing_pathogenicity_informed	Pool reactions	7	False
+splicing_pathogenicity_informed	Protein assembly	7	True
+splicing_pathogenicity_informed	Beta oxidation of di-unsaturated fatty acids (n-6) (peroxisomal)	6	False
+splicing_pathogenicity_informed	Glucocorticoid biosynthesis	6	False
+splicing_pathogenicity_informed	Oxidative phosphorylation	6	False
+splicing_pathogenicity_informed	Sulfur metabolism	6	False
+splicing_pathogenicity_informed	Tryptophan metabolism	6	False
+splicing_pathogenicity_informed	Vitamin E metabolism	6	False
+splicing_pathogenicity_informed	Keratan sulfate degradation	5	False
+splicing_pathogenicity_informed	Protein degradation	5	True
+splicing_pathogenicity_informed	Vitamin B6 metabolism	5	False
+splicing_pathogenicity_informed	Beta oxidation of even-chain fatty acids (peroxisomal)	4	False
+splicing_pathogenicity_informed	Butanoate metabolism	4	False
+splicing_pathogenicity_informed	C5-branched dibasic acid metabolism	4	True
+splicing_pathogenicity_informed	Glutathione metabolism	4	False
+splicing_pathogenicity_informed	Heme synthesis	4	False
+splicing_pathogenicity_informed	Phosphatidylinositol phosphate metabolism	4	False
+splicing_pathogenicity_informed	Acylglycerides metabolism	3	False
+splicing_pathogenicity_informed	Beta oxidation of phytanic acid (peroxisomal)	3	False
+splicing_pathogenicity_informed	Glycerolipid metabolism	3	False
+splicing_pathogenicity_informed	Protein modification	3	False
+splicing_pathogenicity_informed	Thiamine metabolism	3	False
+splicing_pathogenicity_informed	Vitamin A metabolism	3	False
+splicing_pathogenicity_informed	Vitamin B12 metabolism	3	False
+splicing_pathogenicity_informed	Beta oxidation of unsaturated fatty acids (n-9) (peroxisomal)	2	False
+splicing_pathogenicity_informed	Carnitine shuttle (peroxisomal)	2	False
+splicing_pathogenicity_informed	Cholesterol biosynthesis 2	2	False
+splicing_pathogenicity_informed	Dietary fiber binding	2	False
+splicing_pathogenicity_informed	Estrogen metabolism	2	False
+splicing_pathogenicity_informed	Ether lipid metabolism	2	False
+splicing_pathogenicity_informed	Fatty acid desaturation (odd-chain)	2	False
+splicing_pathogenicity_informed	Urea cycle	2	False
+splicing_pathogenicity_informed	Acyl-CoA hydrolysis	1	False
+splicing_pathogenicity_informed	Artificial reactions	1	False
+splicing_pathogenicity_informed	Beta oxidation of odd-chain fatty acids (peroxisomal)	1	False
+splicing_pathogenicity_informed	CoA catabolism	1	False
+splicing_pathogenicity_informed	CoA synthesis	1	False
+splicing_pathogenicity_informed	Fatty acid activation (cytosolic)	1	False
+splicing_pathogenicity_informed	Fatty acid activation (endoplasmic reticular)	1	False
+splicing_pathogenicity_informed	Heme degradation	1	False
+splicing_pathogenicity_informed	Linoleate metabolism	1	False
+splicing_pathogenicity_informed	Lipoic acid metabolism	1	False
+splicing_pathogenicity_informed	Peptide metabolism	1	False
+splicing_pathogenicity_informed	Phenylalanine metabolism	1	False
+splicing_pathogenicity_informed	Riboflavin metabolism	1	False
+splicing_pathogenicity_informed	Vitamin B2 metabolism	1	False
+splicing_pathogenicity_informed	Vitamin C metabolism	1	False

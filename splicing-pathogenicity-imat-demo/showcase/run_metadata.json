@@ -1,0 +1,13 @@
+{
+  "synthetic": true,
+  "samples": 200,
+  "ad_labelled": 100,
+  "control_labelled": 100,
+  "model": "Human-GEM 1.12.0",
+  "model_sha256": "53a74c4495ca4af1334ce67b74cc09fc1ab30c7648eef561f478cac2363f13ab",
+  "gpr": "COBAMP 0.2.1",
+  "imat": "TROPPO 0.0.7",
+  "solver": "Gurobi 11.0.3",
+  "reporter": "archived reporter-like calculation; empty-table handling; 1000 permutations; seed 20261010",
+  "context_specific_gem_exports": 0
+}

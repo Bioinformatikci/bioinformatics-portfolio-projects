@@ -1,7 +1,0 @@
-condition	group	samples	mean_active_reactions	min	max
-expression_only	ad	4	21.00	21	21
-expression_only	control	4	21.00	21	21
-splicing_informed	ad	4	18.25	18	19
-splicing_informed	control	4	21.00	21	21
-splicing_pathogenicity_informed	ad	4	16.25	16	17
-splicing_pathogenicity_informed	control	4	21.00	21	21

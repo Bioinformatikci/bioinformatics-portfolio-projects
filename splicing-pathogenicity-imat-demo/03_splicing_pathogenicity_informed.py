@@ -42,7 +42,8 @@ def main() -> None:
     model = load_model()
     scores = score_reactions(after, model)
     scores.to_csv(processed / "reaction_scores.tsv", sep="\t")
-    matrix, diagnostics = solve_imat_matrix(scores, groups, model, cutoffs)
+    matrix, diagnostics = solve_imat_matrix(scores, groups, model, cutoffs, matrix_dir / "checkpoints",
+                                            RESULTS / "splicing_informed" / "matrix" / "checkpoints")
     matrix.to_csv(matrix_dir / "reaction_activity_matrix.tsv", sep="\t")
     diagnostics.to_csv(matrix_dir / "sample_summary.tsv", sep="\t", index=False)
     print(f"Splicing + pathogenicity-informed reaction matrix written to {matrix_dir}")

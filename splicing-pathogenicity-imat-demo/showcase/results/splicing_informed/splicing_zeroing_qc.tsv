@@ -1,0 +1,2 @@
+allowed_target_cells	changed_cells	unauthorised_changed_cells	control_cells_changed	zero_to_nonzero_cells	targets_not_zero_after	passed
+800	774	0	0	0	0	True

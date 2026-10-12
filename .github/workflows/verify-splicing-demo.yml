@@ -11,7 +11,7 @@ on:
       - ".github/workflows/verify-splicing-demo.yml"
 
 jobs:
-  preview:
+  published-results:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -21,7 +21,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - name: Check syntax
-        run: python -m compileall -q preview_demo.py tests
-      - name: Verify deterministic preview, links and zeroing rules
+      - name: Check script syntax
+        run: python -m compileall -q .
+      - name: Verify synthetic inputs and published Gurobi results
         run: python -m unittest discover -s tests -v

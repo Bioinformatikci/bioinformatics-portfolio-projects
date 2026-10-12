@@ -1,0 +1,4 @@
+condition	reactions	fisher_raw_p_lt_0_05	fisher_bh_p_lt_0_05	reporter_like_corrected_p_lt_0_05	reporter_like_bh_p_lt_0_05
+expression_only	13070	5290	5091	17	6
+splicing_informed	13070	5322	5095	17	6
+splicing_pathogenicity_informed	13070	5356	5061	18	6

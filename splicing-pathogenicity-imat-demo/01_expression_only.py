@@ -22,7 +22,7 @@ def main() -> None:
     scores.to_csv(processed / "reaction_scores.tsv", sep="\t")
     labels = scores.applymap(lambda x: "no_expression_evidence" if pd.isna(x) else "low" if x <= cutoffs[0] else "high" if x >= cutoffs[1] else "neutral")
     labels.to_csv(processed / "reaction_imat_labels.tsv", sep="\t")
-    matrix, diagnostics = solve_imat_matrix(scores, groups, model, cutoffs)
+    matrix, diagnostics = solve_imat_matrix(scores, groups, model, cutoffs, matrix_dir / "checkpoints")
     matrix.to_csv(matrix_dir / "reaction_activity_matrix.tsv", sep="\t")
     diagnostics.to_csv(matrix_dir / "sample_summary.tsv", sep="\t", index=False)
     print(f"Expression-only reaction matrix written to {matrix_dir}")

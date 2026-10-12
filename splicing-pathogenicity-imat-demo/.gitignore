@@ -4,5 +4,10 @@ __pycache__/
 *.pyc
 .venv/
 .cache/
+.showcase_build/
 .python/
 model/*.xml
+reference/*.xml
+reference/Human-GEM-1.12.0/
+synthetic_single_cohort/expression.tsv
+synthetic_single_cohort/pathogenicity_ranks.tsv

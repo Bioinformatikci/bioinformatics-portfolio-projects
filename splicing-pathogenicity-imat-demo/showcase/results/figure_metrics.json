@@ -1,0 +1,54 @@
+{
+  "synthetic": true,
+  "samples": 200,
+  "ad_labelled": 100,
+  "control_labelled": 100,
+  "splicing_targets": {
+    "low_cutoff": 5.269347169330748,
+    "high_cutoff": 10.24692303,
+    "target_pairs": 800,
+    "samples_with_targets": 100,
+    "newly_zeroed_pairs": 774,
+    "already_zero_pairs": 26,
+    "low_pairs": 245,
+    "neutral_pairs": 318,
+    "high_pairs": 237,
+    "detected_splice_event_gene_count_available": false
+  },
+  "paired_model_size_and_similarity": {
+    "paired_ad_samples": 100,
+    "baseline_minus_splicing_median": 0.0,
+    "baseline_minus_splicing_q1": -22.0,
+    "baseline_minus_splicing_q3": 47.25,
+    "baseline_minus_splicing_outliers": 0,
+    "reaction_jaccard_median": 0.922967432177521,
+    "reaction_overlap_index_median": 0.9630618529422017,
+    "reporter_significant_pathway_overlap": {
+      "left": 17,
+      "right": 17,
+      "intersection": 14,
+      "jaccard": 0.7,
+      "overlap_index": 0.8235294117647058
+    }
+  },
+  "conditions": {
+    "expression_only": {
+      "median_active_reactions_ad": 6848.5,
+      "fisher_raw_p_lt_0_05": 5290,
+      "fisher_bh_p_lt_0_05": 5091,
+      "reporter_corrected_p_lt_0_05": 17
+    },
+    "splicing_informed": {
+      "median_active_reactions_ad": 6832.5,
+      "fisher_raw_p_lt_0_05": 5322,
+      "fisher_bh_p_lt_0_05": 5095,
+      "reporter_corrected_p_lt_0_05": 17
+    },
+    "splicing_pathogenicity_informed": {
+      "median_active_reactions_ad": 6794.5,
+      "fisher_raw_p_lt_0_05": 5356,
+      "fisher_bh_p_lt_0_05": 5061,
+      "reporter_corrected_p_lt_0_05": 18
+    }
+  }
+}

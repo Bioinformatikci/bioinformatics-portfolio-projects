@@ -2,14 +2,18 @@
 from __future__ import annotations
 
 import warnings
+import hashlib
+import json
+import os
 from pathlib import Path
 
 import cobra
 import numpy as np
 import pandas as pd
 from cobamp.wrappers.cobra import COBRAModelObjectReader
+from cobamp.core import linear_systems as cobamp_linear_systems
 from cobra.util.array import create_stoichiometric_matrix
-from scipy.stats import fisher_exact, norm
+from scipy.stats import fisher_exact
 from troppo.methods.reconstruction.imat import IMAT, IMATProperties
 
 
@@ -17,7 +21,9 @@ ROOT = Path(__file__).resolve().parent
 DATA = ROOT / "data"
 RAW = DATA / "raw"
 RESULTS = ROOT / "results"
-MODEL_PATH = ROOT / "model" / "Human-GEM-1.12.0.xml"
+REFERENCE_MODEL_PATH = ROOT / "reference" / "Human-GEM_1.12.0.xml"
+DOWNLOADED_MODEL_PATH = ROOT / "model" / "Human-GEM-1.12.0.xml"
+MODEL_PATH = REFERENCE_MODEL_PATH if REFERENCE_MODEL_PATH.exists() else DOWNLOADED_MODEL_PATH
 SEED = 20261010
 PERMUTATIONS = 1000
 CONDITIONS = ("expression_only", "splicing_informed", "splicing_pathogenicity_informed")
@@ -46,10 +52,30 @@ def omitnan_max(values) -> float:
     return max(present) if present else np.nan
 
 
-def load_model(*, require_gurobi: bool = True):
+def selected_solver() -> str:
+    """Use Gurobi for the published run; GLPK is an explicit fallback only."""
+    solver = os.environ.get("IMAT_SOLVER", "GUROBI").strip().upper()
+    if solver not in {"GUROBI", "GLPK"}:
+        raise ValueError("IMAT_SOLVER must be GUROBI or GLPK.")
+    if solver not in cobamp_linear_systems.SOLVER_INTERFACES:
+        if solver == "GUROBI":
+            raise RuntimeError(
+                "Gurobi is unavailable. Install gurobipy==11.0.3 and activate a Gurobi "
+                "license to reproduce the published matrices. For an experimental "
+                "fallback, install GLPK and run with IMAT_SOLVER=GLPK; alternate "
+                "optimal reaction sets can differ from the Gurobi results."
+            )
+        raise RuntimeError("GLPK is unavailable. Install its system library and swiglpk.")
+    cobamp_linear_systems.CUSTOM_DEFAULT_SOLVER = solver
+    return solver
+
+
+def load_model():
     require(MODEL_PATH)
-    if require_gurobi:
-        cobra.Configuration().solver = "gurobi"
+    from build_model_index import verify_model
+    verify_model(MODEL_PATH)
+    solver = selected_solver()
+    cobra.Configuration().solver = solver.lower()
     model = cobra.io.read_sbml_model(str(MODEL_PATH))
     for reaction_id, (lower, upper) in ESSENTIAL_BOUNDS.items():
         reaction = model.reactions.get_by_id(reaction_id)
@@ -142,30 +168,75 @@ def score_reactions(expression: pd.DataFrame, model) -> pd.DataFrame:
     return pd.DataFrame(scores).replace({None: np.nan})
 
 
-def solve_imat_matrix(scores: pd.DataFrame, groups: pd.DataFrame, model, cutoffs: tuple[float, float]) -> tuple[pd.DataFrame, pd.DataFrame]:
+def score_fingerprint(values: np.ndarray, cutoffs: tuple[float, float]) -> str:
+    """Fingerprint exactly the numeric iMAT input for one sample."""
+    return hashlib.sha256(np.nan_to_num(np.asarray(values, dtype=np.float64), nan=-1.0).tobytes() +
+                          np.asarray(cutoffs, dtype=np.float64).tobytes()).hexdigest()
+
+
+def solve_imat_matrix(scores: pd.DataFrame, groups: pd.DataFrame, model, cutoffs: tuple[float, float],
+                      checkpoint_dir: Path, reuse_from: Path | None = None) -> tuple[pd.DataFrame, pd.DataFrame]:
+    solver = selected_solver()
     reaction_ids = [reaction.id for reaction in model.reactions]
     scores = scores.reindex(reaction_ids)
-    stoichiometry = create_stoichiometric_matrix(model, array_type="dense", dtype=np.float64)
+    stoichiometry = None
     lower = np.array([reaction.lower_bound for reaction in model.reactions])
     upper = np.array([reaction.upper_bound for reaction in model.reactions])
     matrix = pd.DataFrame(0, index=reaction_ids, columns=groups.sample_id.astype(str), dtype=np.int8)
     diagnostics = []
+    checkpoint_dir.mkdir(parents=True, exist_ok=True)
     low_cutoff, high_cutoff = cutoffs
     for number, sample in enumerate(matrix.columns, 1):
         values = scores[sample].to_numpy(dtype=float)
-        properties = IMATProperties(exp_vector=values, exp_thresholds=(low_cutoff, high_cutoff), tolerance=1e-8, epsilon=1)
-        algorithm = IMAT(stoichiometry, lower, upper, properties)
-        kept = np.asarray(algorithm.run(), dtype=int)
-        status = algorithm.sol.status()
-        if status != "optimal":
-            raise RuntimeError(f"{sample}: TROPPO iMAT status={status}")
+        fingerprint = score_fingerprint(values, cutoffs)
+        checkpoint = checkpoint_dir / f"{sample}.json"
+        saved = None
+        for candidate in (checkpoint, (reuse_from / f"{sample}.json") if reuse_from is not None else checkpoint):
+            if candidate.exists():
+                with candidate.open(encoding="utf-8") as stream:
+                    potential = json.load(stream)
+                if (potential.get("fingerprint") == fingerprint
+                        and potential.get("reaction_count") == len(reaction_ids)
+                        and potential.get("solver", "GUROBI") == solver):
+                    saved = potential
+                    break
+        if saved is not None:
+            kept = np.asarray(saved["kept_indices"], dtype=int)
+            objective = float(saved["objective"])
+            status = "optimal"
+            source = "reused" if candidate != checkpoint else "checkpoint"
+            if candidate != checkpoint:
+                copied = dict(saved, solver=solver)
+                temporary = checkpoint.with_suffix(".json.tmp")
+                with temporary.open("w", encoding="utf-8") as stream:
+                    json.dump(copied, stream, separators=(",", ":"))
+                temporary.replace(checkpoint)
+        else:
+            if stoichiometry is None:
+                stoichiometry = create_stoichiometric_matrix(model, array_type="dense", dtype=np.float64)
+            properties = IMATProperties(exp_vector=values, exp_thresholds=(low_cutoff, high_cutoff), tolerance=1e-8, epsilon=1)
+            algorithm = IMAT(stoichiometry, lower, upper, properties)
+            kept = np.asarray(algorithm.run(), dtype=int)
+            status = algorithm.sol.status()
+            if status != "optimal":
+                raise RuntimeError(f"{sample}: TROPPO iMAT status={status}")
+            objective = float(algorithm.sol.objective_value())
+            payload = {"sample_id": sample, "fingerprint": fingerprint, "reaction_count": len(reaction_ids),
+                       "solver": solver,
+                       "kept_indices": kept.tolist(), "objective": objective, "troppo_status": status}
+            temporary = checkpoint.with_suffix(".json.tmp")
+            with temporary.open("w", encoding="utf-8") as stream:
+                json.dump(payload, stream, separators=(",", ":"))
+            temporary.replace(checkpoint)
+            source = "solved"
         matrix.iloc[kept, matrix.columns.get_loc(sample)] = 1
         diagnostics.append({"sample_id": sample, "group": groups.set_index("sample_id").at[sample, "group"],
-                            "active_reactions": int(matrix[sample].sum()), "imat_objective": float(algorithm.sol.objective_value()),
+                            "active_reactions": int(matrix[sample].sum()), "imat_objective": objective,
                             "high_reactions": int(np.isfinite(values).sum() and (values >= high_cutoff).sum()),
                             "low_reactions": int(np.isfinite(values).sum() and ((values >= 0) & (values < low_cutoff)).sum()),
-                            "troppo_status": status, "result_type": "reaction_matrix_no_gem"})
-        print(f"{sample}: TROPPO iMAT {number}/{len(matrix.columns)}", flush=True)
+                            "troppo_status": status, "solver": solver,
+                            "result_type": "reaction_matrix_no_gem", "source": source})
+        print(f"{sample}: TROPPO iMAT {number}/{len(matrix.columns)} ({source})", flush=True)
     matrix.index.name = "reaction_id"
     return matrix, pd.DataFrame(diagnostics)
 
@@ -180,25 +251,8 @@ def run_fisher(matrix: pd.DataFrame, groups: pd.DataFrame) -> pd.DataFrame:
         rows.append({"reaction_id": reaction_id, "ad_present": ad_present, "ad_absent": len(ad) - ad_present,
                      "control_present": control_present, "control_absent": len(control) - control_present,
                      "odds_ratio": odds, "p_value": p_value})
-    return pd.DataFrame(rows).sort_values("p_value", kind="stable")
-
-
-def reporter_like(fisher: pd.DataFrame, subsystem: pd.DataFrame) -> pd.DataFrame:
-    """Permutation reporter-like statistic; deliberately no hypergeometric test."""
-    joined = subsystem.merge(fisher[["reaction_id", "p_value"]], on="reaction_id", how="inner")
-    joined["z_score"] = norm.isf(joined.p_value.clip(lower=np.finfo(float).tiny, upper=1 - 1e-15))
-    rng = np.random.default_rng(SEED)
-    all_z = joined.z_score.to_numpy()
-    rows = []
-    for pathway, part in joined.groupby("subsystem", sort=True):
-        observed = float(part.z_score.mean())
-        size = len(part)
-        null = np.array([rng.choice(all_z, size=size, replace=False).mean() for _ in range(PERMUTATIONS)])
-        p_value = (1 + int((null >= observed).sum())) / (PERMUTATIONS + 1)
-        rows.append({"subsystem": pathway, "reaction_count": size, "reporter_score": observed,
-                     "reporter_p_value": p_value})
-    result = pd.DataFrame(rows).sort_values("reporter_p_value", kind="stable").reset_index(drop=True)
-    result["reporter_p_adjusted_bh"] = _bh(result.reporter_p_value.to_numpy())
+    result = pd.DataFrame(rows).sort_values("p_value", kind="stable").reset_index(drop=True)
+    result["p_adjusted_bh"] = _bh(result.p_value.to_numpy())
     return result
 
 

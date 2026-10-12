@@ -14,7 +14,7 @@ The projects focus on sequence analysis, transcriptomics, alternative splicing w
 | `bioinformatics-python-scripts/` | Small reproducible bioinformatics utilities and analysis scripts | Python, pandas, SciPy, matplotlib |
 | `rna-seq-alternative-splicing-rmats/` | RNA-seq alternative splicing workflow notes | STAR, rMATS, rmats2sashimiplot, shell |
 | `interactive-shiny-dashboards/` | Interactive data exploration applications | R, Shiny, ggplot2, DT |
-| [`splicing-pathogenicity-imat-demo/`](splicing-pathogenicity-imat-demo/) | Synthetic splicing and pathogenicity workflow with a ready-to-view HTML report and reproducible toy figures | Python, COBAMP, TROPPO, Human-GEM, Gurobi |
+| [`splicing-pathogenicity-imat-demo/`](splicing-pathogenicity-imat-demo/) | Three-stage Human-GEM iMAT workflow on a synthetic 200-sample cohort, with computed matrices, figures, and an HTML results report | Python, COBAMP, TROPPO, Human-GEM, Gurobi, R |
 
 ## Highlighted Work
 
@@ -24,9 +24,9 @@ The projects focus on sequence analysis, transcriptomics, alternative splicing w
 - Python scripts for FASTA parsing, motif search, simple genome assembly logic, GBM expression summaries, volcano plotting, and variant population summaries.
 - R/Shiny applications for interactive Palmer Penguins and obesity transcriptome data exploration.
 - RNA-seq alternative splicing workflow notes using STAR, rMATS, and rmats2sashimiplot.
-- [Splicing and pathogenicity iMAT demo](splicing-pathogenicity-imat-demo/): inspect the [downloadable HTML report](splicing-pathogenicity-imat-demo/showcase/index.html), [plots](splicing-pathogenicity-imat-demo/showcase/figures/active_reactions.svg), and [input tables](splicing-pathogenicity-imat-demo/showcase/data/raw/), or regenerate the preview with one standard-library Python command. The model-based pipeline is documented separately and requires its pinned dependencies and a Gurobi license.
+- [Synthetic splicing and pathogenicity iMAT workflow](splicing-pathogenicity-imat-demo/): inspect the [vector figures](splicing-pathogenicity-imat-demo/showcase/figures/active_reactions.svg), [computed reaction matrices and statistics](splicing-pathogenicity-imat-demo/showcase/results/), [supplied synthetic inputs](splicing-pathogenicity-imat-demo/synthetic_single_cohort/), and [downloadable HTML report](splicing-pathogenicity-imat-demo/showcase/index.html). The project README documents the verified Human-GEM release, analysis steps, solver requirements, and reproduction limits. Synthetic differences are not biological or clinical findings.
 
-![Synthetic reaction activity preview, clearly separated from model-based iMAT results](splicing-pathogenicity-imat-demo/showcase/figures/active_reactions.svg)
+![Computed iMAT reaction activity in a synthetic cohort](splicing-pathogenicity-imat-demo/showcase/figures/active_reactions.svg)
 
 ## Topics Covered
 
@@ -41,13 +41,13 @@ The projects focus on sequence analysis, transcriptomics, alternative splicing w
 
 ## Notes On Authorship
 
-The repository contains Burak Keskin's portfolio work. The synthetic splicing and pathogenicity demonstration includes code, toy data, and presentation materials developed with Codex assistance. Its README separates the lightweight preview from the model-based research workflow and states what has been verified.
+The repository contains Burak Keskin's portfolio work. The synthetic iMAT demonstration includes analysis code, artificial inputs, and presentation materials developed with Codex assistance. Its README identifies the calculated outputs, source model, reproducibility requirements, and interpretation limits.
 
 ## Repository Status
 
 This is a portfolio-oriented repository. Some scripts are compact analysis examples or workflow notes rather than fully packaged software. Where external datasets are required, the relevant project README explains the expected input files.
 
-Large raw sequencing files, model outputs, archives, and temporary analysis outputs are intentionally excluded from version control. Small coursework datasets needed by the Shiny examples are included so those apps can be reviewed locally.
+Large raw sequencing files, model archives, and temporary analysis outputs are excluded from version control. The synthetic iMAT project includes curated compressed reaction matrices and result tables so the figures can be audited without rerunning the solver. Small coursework datasets needed by the Shiny examples are included so those apps can be reviewed locally.
 
 ## Suggested Use
 

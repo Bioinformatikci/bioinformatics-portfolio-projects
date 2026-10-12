@@ -1,0 +1,2 @@
+dataset_id	generation_seed	ad_samples	control_samples	retained_protein_coding_genes	expression_generation	source_sample_identifiers_retained	source_numerical_cells_copied	complete_source_rows_or_columns_retained
+synthetic_single_cohort	20261012	100	100	18597	distributional simulation with shuffled gene-level log-space parameters	False	False	False
