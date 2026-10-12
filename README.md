@@ -24,7 +24,7 @@ The projects focus on sequence analysis, transcriptomics, alternative splicing w
 - Python scripts for FASTA parsing, motif search, simple genome assembly logic, GBM expression summaries, volcano plotting, and variant population summaries.
 - R/Shiny applications for interactive Palmer Penguins and obesity transcriptome data exploration.
 - RNA-seq alternative splicing workflow notes using STAR, rMATS, and rmats2sashimiplot.
-- [Splicing and pathogenicity iMAT demo](splicing-pathogenicity-imat-demo/): view the [generated toy report](splicing-pathogenicity-imat-demo/showcase/index.html), [plots](splicing-pathogenicity-imat-demo/showcase/figures/active_reactions.svg), and [input tables](splicing-pathogenicity-imat-demo/showcase/data/raw/), or regenerate the preview with one standard-library Python command. The model-based pipeline is documented separately and requires its pinned dependencies and a Gurobi license.
+- [Splicing and pathogenicity iMAT demo](splicing-pathogenicity-imat-demo/): inspect the [downloadable HTML report](splicing-pathogenicity-imat-demo/showcase/index.html), [plots](splicing-pathogenicity-imat-demo/showcase/figures/active_reactions.svg), and [input tables](splicing-pathogenicity-imat-demo/showcase/data/raw/), or regenerate the preview with one standard-library Python command. The model-based pipeline is documented separately and requires its pinned dependencies and a Gurobi license.
 
 ![Synthetic reaction activity preview, clearly separated from model-based iMAT results](splicing-pathogenicity-imat-demo/showcase/figures/active_reactions.svg)
 

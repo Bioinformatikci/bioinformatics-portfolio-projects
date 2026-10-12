@@ -7,9 +7,13 @@ installation and license. No patient or study cohort data are included.
 
 ## Explore the ready-made preview
 
-[Open the HTML report](showcase/index.html) · [Browse the toy inputs](showcase/data/raw/) ·
+[Get the HTML report](showcase/index.html) · [Browse the toy inputs](showcase/data/raw/) ·
 [Inspect the zeroing audit](showcase/audits/zeroing.tsv) ·
 [Read the generated summary](showcase/results/group_summary.tsv)
+
+GitHub renders the figures below directly. GitHub shows the HTML file as source;
+to see the formatted report, clone or download this repository and open
+`showcase/index.html` in a browser.
 
 ![Mean synthetic reaction activity across three conditions](showcase/figures/active_reactions.svg)
 
